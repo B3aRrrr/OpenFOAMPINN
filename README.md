@@ -1,22 +1,20 @@
 # OpenFOAMPINN
-# Описание репозитория
+# Repository Description
 
-В данном репозитории содержатся мои результаты исследования по теме использования PINN  и GNN технологий в задаче CFD. Было рассмотрено две архитектуры сети - FNN и PFNN - в рамках библиотекии DeepXDE (находятся по директоори `notebooks/DeepXDE_PINN.ipynb`. Была также попытка рассмотреть и PiDeepONet. Хороший результат с большими перспективами был достигнут с использованием графовых нейрнонных сетей (Graph Neural Network - GNN). Все материлы для подготовки, обучению и визуализации результатов находятя в директории `GNN`. Рассматривалась задача обтекания крыла самолета идеальным, стационарным несжимаемым газом. При желании код можно расширить для использования с сжимаемым газом (в случаее DeepXDE необходимо добавить дополнительные неизвестные и модернизироват систему уравнений в частных производных + использоват `TimePDE` вместо `PDE`; в случае GNN необходимо изначально готовить расчетный случай с помощью сжимаемого решателия (rhoSimpleFoam и т.д.)).
-Расчетные случаи готовились с помощью средств `OpenFOAM`, с исходной геометрией я перемудрил и готовил профиля крыльев в `Blender`. Экспериментировал с профилями серии NACA.
-Строго не судите. Работа не закончена.
+This repository contains the results of my research on using PINN and GNN technologies in CFD tasks. Two network architectures were considered - FNN and PFNN - within the DeepXDE library (located in the `notebooks/DeepXDE_PINN.ipynb` directory). There was also an attempt to explore PiDeepONet. Promising results with great potential were achieved using Graph Neural Networks (GNN). All materials for preparation, training, and visualization of results are located in the `GNN` directory. The problem considered was the flow around an airplane wing with an ideal, steady, incompressible gas. If desired, the code can be extended for use with compressible gas (in the case of DeepXDE, additional unknowns need to be added and the system of partial differential equations needs to be updated, and `TimePDE` used instead of `PDE`; in the case of GNN, the initial computational case should be prepared using a compressible solver like `rhoSimpleFoam`, etc.).
+The computational cases were prepared using `OpenFOAM`, with the initial geometry being quite intricate, as I prepared the wing profiles in `Blender`. I experimented with NACA series profiles.
+Please don't judge strictly. The work is not finished.
 
-## Содержание
+## Contents
 
-- `GNN`: Материалы по GNN.
-- `data`: Ноутбук с подготовкой данных для обучения и непосредственного обучения.
-  -   `NACA0012`: Тестовые и обучающие материалы для работы с DeepXDE по NACA0012.
-  -   `NACA2412`: Тестовые и обучающие материалы для работы с DeepXDE по NACA2412.
-- `geometry`: Архив с используемой геометрией в качестве тел обтекания (при желании можно сгенерировать свою с помощью файла `Blender/make_naca.blend`.
-- `notebooks`: Jupнter Nootebooks для работы FNN/PFNN + заготовка для работы PiDeepONet.
-- `results`: Наилучшие результаты были достигнуты при использовании GNN. Хотя модель недообучена.
+- `GNN`: Materials on GNN.
+- `data`: Notebook for data preparation and training.
+  - `NACA0012`: Test and training materials for working with DeepXDE on NACA0012.
+  - `NACA2412`: Test and training materials for working with DeepXDE on NACA2412.
+- `geometry`: Archive with the geometry used as the bodies for flow simulations (you can generate your own using the `Blender/make_naca.blend` file if desired).
+- `notebooks`: Jupyter Notebooks for working with FNN/PFNN + a template for working with PiDeepONet.
+- `results`: The best results were achieved using GNN, though the model is undertrained.
 
-## Промежуточные результаты
+## Intermediate Results
 ![Model Training Overview](results/NACA0012_Vel_10_GNN_Field_U.png)
 ![Model Training Overview](results/NACA0012_Vel_10_GNN_Field_p.png)
-
-
