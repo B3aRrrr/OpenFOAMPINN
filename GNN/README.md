@@ -1,13 +1,10 @@
-# Описание репозитория
+# Repository Description
 
-В данной директории содержатся архивы ноутбуков и результатов обучения моделей, использованные в процессе исследования.
+This directory contains archives of notebooks and training results of models used in the research process.
 
-## Содержание
+## Contents
 
-- `tensorboardGNN.zip`: Ноутбук постобработкой.
-- `main_GNN.zip`: Ноутбук с подготовкой данных для обучения и непосредственного обучения.
-- `best_model_info.zip`: Результаты обучения лучшей модели
-- `modelGNN.zip`: Результаты обучения моделей подборочных
-
-
-
+- `tensorboardGNN.zip`: Notebook for post-processing.
+- `main_GNN.zip`: Notebook for data preparation and training.
+- `best_model_info.zip`: Training results of the best model.
+- `modelGNN.zip`: Training results of the sample models.
